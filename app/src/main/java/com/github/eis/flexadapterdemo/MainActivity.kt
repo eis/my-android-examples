@@ -18,17 +18,18 @@ class MainActivity : AppCompatActivity() {
         val myItems = getDatabaseList()
 
         // Initialize the Adapter
-        val adapter = FlexibleAdapter<IFlexible<MyItem.MyViewHolder>>(myItems)
+        val adapter = FlexibleAdapter<IFlexible<*>>(myItems)
 
         // Initialize the RecyclerView and attach the Adapter to it as usual
         recycler_view_example_list.adapter = adapter
 
+        // Layout manager needs to be added to get anything to show up
         val linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
         recycler_view_example_list.layoutManager = linearLayoutManager
     }
 
-    private fun getDatabaseList(): List<IFlexible<MyItem.MyViewHolder>> {
+    private fun getDatabaseList(): List<IFlexible<*>> {
         val list = ArrayList<MyItem>()
         list.add(MyItem("1", "Hello"))
         list.add(MyItem("2", "World"))
