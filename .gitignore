@@ -2,16 +2,16 @@
 .gradle
 
 # Android
-/build
-/captures
+**/build
+**/captures
 *.apk
 
 # OS X
 .DS_Store
 
 # IntelliJ
-.idea/
+**/.idea/
 *.iml 
 
 # Misc
-/local.properties
+**/local.properties
